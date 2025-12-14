@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Esther Aduamah</title>
+    <link rel="stylesheet" href="styles.css">
+
+    </head>
+<script>
+    (function () {
+        try {
+            const saved = localStorage.getItem('theme');
+            const systemPrefersDark =
+                window.matchMedia &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            const isDark = saved
+                ? saved === 'dark'
+                : systemPrefersDark;
+
+            if (isDark) {
+                document.documentElement.classList.add('dark-theme');
+            } else {
+                document.documentElement.classList.remove('dark-theme');
+            }
+        } catch (e) {
+            // ignore errors
+        }
+    })();
+</script>
+
+
+<body>
+    <header>
+        <div class="logo"><a href="index.html">esther aduamah</a></div>
+        <nav>
+            <a href="experience.html" class="nav-link">projects</a>
+            <a href="about.html" class="nav-link">about</a>
+            <a href="skills.html" class="nav-link">skills</a>
+            <a href="blog.html" class="nav-link active">blog</a>
+            <a href="contact.html" class="nav-link">contact</a>
+            <button id="theme-toggle">🌙</button>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <section class="page-section scroll-fade-in">
+            
+            <div class="page-title-block">
+                <h1>writing & thoughts</h1>
+                <span>creative pieces & science communication</span>
+            </div>
+
+            <div class="blog-container">
+                
+                <div class="blog-column">
+                    <h2>creative writing</h2>
+                    
+                    <div class="article-item">
+                        <a href="writings/iron_heart.html" class="article-title">iron heart</a>
+                        <div class="article-meta">december 15, 2024</div>
+                        <p class="article-desc">a poem about an iron.</p>
+                    </div>
+
+                    <div class="article-item">
+                        <a href="writings/queenpin.html" class="article-title">queenpin</a>
+                        <div class="article-meta">october 2, 2024</div>
+                        <p class="article-desc">a short story about Margo.</p>
+                    </div>
+
+                    <div class="article-item">
+                        <a href="writings/chimera_ant.html" class="article-title">Chimera Ant</a>
+                        <div class="article-meta">august 10, 2024</div>
+                        <p class="article-desc">speculative fiction about what happens to our data when we're gone, and who gets to keep the keys.</p>
+                    </div>
+                </div>
+
+                <div class="blog-column">
+                    <h2>science communication</h2>
+                    
+                    <div class="article-item">
+                        <a href="writings/kim_mccall.html" class="article-title">Dr. Kim McCall: Unraveling Programmed Cell Death in Drosophila</a>
+                        <div class="article-meta">February 20, 2025</div>
+                        <p class="article-desc">An explanatory piece on the importance of apoptosis research using fruit flies and its implications for human health and disease.</p>
+                    </div>
+
+                    <div class="article-item">
+                        <a href="writings/optogenetics.html" class="article-title">Optogenetic Manipulation to Enhance Crop Growth and Water Efficiency</a>
+                        <div class="article-meta">February 1, 2025</div>
+                        <p class="article-desc">Explaining how light-based genetic tools are being developed to engineer plants for a more sustainable and drought-resistant agricultural future.</p>
+                    </div>
+
+                    <div class="article-item">
+                        <a href="writings/microbiome.html" class="article-title">Microbes: A Whole New World</a>
+                        <div class="article-meta">december 10, 2024</div>
+                        <p class="article-desc">A look at the latest discoveries in the microbiome and their profound impact on human and planetary health.</p>
+                    </div>
+
+                    <div class="article-item">
+                        <a href="writings/menthea.html" class="article-title">Breaking the Cycle: Trauma and Mental Health Barriers in the Black Community</a>
+                        <div class="article-meta">november 30, 2024</div>
+                        <p class="article-desc">Examining the structural and cultural challenges to accessing and receiving effective mental healthcare.</p>
+                    </div>
+
+                    <div class="article-item">
+                        <a href="writings/tree_stages.html" class="article-title">The Nature of Competition: Because Not All Trees Are Meant to Share a Stage</a>
+                        <div class="article-meta">november 15, 2024</div>
+                        <p class="article-desc">A science-meets-philosophy essay on ecological competition and resource management.</p>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+    <footer>
+        <span class="copyright">Esther Aduamah - © 2025</span>
+        <span class="love-note">built with code, chocolate donuts, & lots of Cartoon Network &lt;3</span>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

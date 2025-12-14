@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Esther Aduamah</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+  (function () {
+    try {
+      const saved = localStorage.getItem('theme');
+      const systemPrefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      const isDark = saved
+        ? saved === 'dark'
+        : systemPrefersDark;
+
+      if (isDark) {
+        document.documentElement.classList.add('dark-theme');
+      } else {
+        document.documentElement.classList.remove('dark-theme');
+      }
+    } catch (e) {
+      // ignore errors
+    }
+  })();
+</script>
+ 
+  <header>
+        <div class="logo"><a href="index.html">esther aduamah</a></div>
+        <nav>
+            <a href="experience.html" class="nav-link">projects</a>
+            <a href="about.html" class="nav-link">about</a>
+            <a href="skills.html" class="nav-link">skills</a>
+            <a href="blog.html" class="nav-link">blog</a>
+            <a href="contact.html" class="nav-link active">contact</a>
+            <button id="theme-toggle">🌙</button>
+        </nav>
+    </header>
+    <div class="content-wrapper">
+        <section class="page-section scroll-fade-in">
+            <div class="page-title-block">
+                <h1>technical projects</h1>
+                <span>engineering, data analysis, & more</span>
+            </div>
+            
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <img src="images/USDA.png" alt="Nutrition Analysis">
+                    <h3>nutritional trends analysis</h3>
+                    <span class="project-sub">python | data visualization</span>
+                    <p>utilized python to summarize the usda fooddata central api, automating the retrieval of nutritional information and creating visual distributions.</p>
+                    <a href="https://github.com/olincollege/nutrition-trends" class="project-link">view github</a>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/arm.png" alt="Prosthetic Arm">
+                    <h3>emg-controlled prosthetic</h3>
+                    <span class="project-sub">arduino | python  | raspberry pi | fabrication</span>
+                    <p>fabricated a prosthetic arm prototype controlled by emg signals, implementing signal processing pipelines for real-time movement precision.</p>
+                    <a href="https://olincollege.github.io/pie-2024-03/cyberflex/" class="project-link">view details</a>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/ro-butt.jpg" alt="Line Robot">
+                    <h3>pid line-following robot</h3>
+                    <span class="project-sub">arduino | embedded systems</span>
+                    <p>developed a line-following robot using arduino and ir sensors, implementing a pid control system to optimize motor responsiveness.</p>
+                    <a href="https://drive.google.com/file/d/1AdVb6o9onfvniEmv68_2FLVGVvjEjq1l/view" class="project-link">view details</a>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/masks.png" alt="Mask Study">
+                    <h3>mask effectiveness model</h3>
+                    <span class="project-sub">matlab | statistical modeling</span>
+                    <p>modeled infectious outcomes to evaluate the role of mask compliance in reducing sick days using statistical distributions.</p>
+                    <a href="https://drive.google.com/file/d/1VJ8deMhFUEFRjSFNWj_oqnN6TRgXSueJ/view" class="project-link">view details</a>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/masks.png" alt="Mask Study">
+                    <h3>mask effectiveness model</h3>
+                    <span class="project-sub">human centered design | thought experiments</span>
+                    <p>modeled infectious outcomes to evaluate the role of mask compliance in reducing sick days using statistical distributions.</p>
+                    <a href="https://sites.google.com/view/justicechamber/home" class="project-link">view website</a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <span class="copyright">Esther Aduamah - © 2025</span>
+        <span class="love-note">built with code, chocolate donuts, & lots of Cartoon Network &lt;3</span>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fabric and The Iron</title>
+    <style>
+        /* --- 1. RESET & VARIABLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-color: #fdfbf7; 
+            --card-color: #eee8d5; 
+            --text-color: #333333;
+            --accent-color: #555555;
+            --font-main: "Courier New", Courier, monospace;
+        }
+
+        /* --- 2. BODY LAYOUT --- */
+        body {
+            background-color: var(--bg-color);
+            font-family: var(--font-main);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* --- 3. MAIN CARD CONTAINER --- */
+        .blog-card {
+            background-color: var(--card-color);
+            width: 100%;
+            max-width: 900px;
+            border-radius: 12px; 
+            padding: 60px 80px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* --- 4. HEADER SECTION --- */
+        .post-icon {
+            font-size: 24px;
+            margin-bottom: 40px;
+            display: block;
+            /* Icon is strictly left-aligned in standard layout, 
+               but if you want it centered too, uncomment below: */
+            /* text-align: center; */
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Center vertically */
+            margin-bottom: 60px;
+            border-bottom: 1px solid transparent;
+            /* For centered layout, we might want to stack them or keep spread */
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+            flex-wrap: wrap;
+            align-items: baseline;
+            width: 100%;
+            justify-content: flex-start; /* Changed to flex-start to align left */
+        }
+
+        .post-date {
+            color: var(--accent-color);
+        }
+
+        .post-title {
+            color: var(--text-color);
+        }
+
+        /* --- 5. CONTENT SECTION --- */
+        .post-content {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 60px;
+            max-width: 100%; /* Allow full width usage */
+            text-align: center; /* CENTER EVERYTHING */
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+        }
+
+        .stanza {
+            margin-bottom: 30px;
+        }
+
+        /* --- STAIRCASE / STEP STYLES --- */
+        .step-container {
+            /* We keep text-align left inside this block so the steps work visually,
+               but we center the block itself */
+            text-align: left; 
+            margin: 40px auto;
+            width: 85%; /* Adjust width to control how "centered" the block feels */
+        }
+
+        .step-container p {
+            margin-bottom: 15px;
+        }
+
+        /* Indentation Steps */
+        .step-0 { margin-left: 0; }
+        .step-1 { margin-left: 15%; }
+        .step-2 { margin-left: 30%; }
+        .step-3 { margin-left: 45%; }
+
+
+        .story-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .post-tags {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center; /* Center tags too */
+        }
+
+        .post-tags a {
+            color: var(--text-color);
+            text-decoration: underline;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .post-tags a:hover {
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* --- 6. FOOTER / NAVIGATION --- */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+        }
+
+        .nav-link {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #000;
+        }
+
+        .back-link {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-3px);
+            color: #000;
+        }
+
+        /* --- 7. RESPONSIVE (MOBILE) --- */
+        @media (max-width: 768px) {
+            .blog-card {
+                padding: 30px 20px;
+            }
+
+            .header-meta {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center; /* Center header items on mobile */
+                text-align: center;
+            }
+
+            .post-header {
+                flex-direction: column;
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+            
+            .step-container {
+                width: 100%; /* Use full width on mobile */
+            }
+            
+            /* Tighter steps on mobile so text fits */
+            .step-1 { margin-left: 10%; }
+            .step-2 { margin-left: 20%; }
+            .step-3 { margin-left: 30%; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="blog-card">
+        <!-- Top Icon / Back Link -->
+        <div class="post-icon">
+            <a href="\blog.html" class="back-link" title="Back to Blog">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Header -->
+        <header class="post-header">
+            <div class="header-meta">
+                <span class="post-date">Nov 24, 2025</span>
+                <span class="post-title">Iron Heart</span>
+            </div>
+        </header>
+
+        <!-- Main Body Text -->
+        <article class="post-content">
+            
+            <div class="stanza">
+                On top of the ironing board, a fabric lays<br>
+                A display so glorious that a melody plays
+            </div>
+
+            <div class="stanza">
+                Ghanaian sown, curious of the unfamiliar<br>
+                Exploration far away, as it is required to singular
+            </div>
+
+            <div class="stanza">
+                Boldest of contrasts, black and white unite<br>
+                Separation is key, in day and night
+            </div>
+
+            <div class="stanza">
+                Folded twice, it seeks protection,<br>
+                Fazed by every inspection
+            </div>
+
+            <div class="stanza">
+                The fabric and iron live in balance<br>
+                Since the iron asks for silence
+            </div>
+
+            <div class="stanza">
+                The iron’s hot touch, a symbol of might,<br>
+                A family’s wishes, veiled from light
+            </div>
+
+            <div class="stanza">
+                In the pursuit of flawlessness, it’s clear,<br>
+                The Fabric conceals what it wishes to be.
+            </div>
+
+            <!-- The "Stepped" Section -->
+            <div class="step-container">
+                <p class="step-0">The Iron snaps at the clothes to present themselves more elegantly; to come out of the dryer less wrinkled,</p>
+                <p class="step-1">less effort on Iron,</p>
+                <p class="step-2">less influence on Fabric,</p>
+                <p class="step-3">yet somehow the Fabric takes the brunt of the force, always present when the Iron reprimands clothes.</p>
+            </div>
+
+            <p>The Iron hisses, as the clothes land, striving to banish all of their flaws with scalding metals and steam, oblivious to the Fabric’s latent love of those imperfections. In wanting to embrace the garments, the Fabric subtly weaves clothes’ strong-willed behaviors into their own reticent canvas.</p>
+
+            <p>The Iron does not see the Fabric’s patches of vibrant colors, loud depictions of red, black, and green that have been stained from wet clothes, always overlooked through the iron’s heat of its security, the touch of their demanding hands that focus only on clothes. Because colors scare the Iron.</p>
+
+            <p>The Iron hums in peace knowing they have shown the Fabric the true way of living, feeling proud in the sunshine; the Fabric takes it upon themself to fulfill the iron’s wishes— yet can never stomach it, always bending and folding so clothes can leave ‘imperfect,’ knowing the consequences, constantly anxious in the moonlight.</p>
+
+            <p>Will we ever witness its true desires?<br>
+            How the fabric yearns to fold to its aspirations, to exist without an iron fist? To no longer carry the Iron Heart.</p>
+
+            <!-- Tags Section -->
+            <div class="post-tags">
+                <a href="#">poetry</a>
+                <a href="#">fabric</a>
+                <a href="#">ghanaian</a>
+            </div>
+        </article>
+
+        <!-- Footer Navigation -->
+        <footer class="post-navigation">
+            <a href="#" class="nav-link">Previous</a>
+            <a href="./queenpin.html" class="nav-link">Next</a>
+        </footer>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking the Cycle: Trauma and Mental Health Barriers in the Black Community</title>
+    <style>
+        /* --- 1. RESET & VARIABLES (MATCHING PREVIOUS STYLE) --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-color: #fdfbf7; /* Lighter cream background */
+            --card-color: #eee8d5; /* Darker beige card */
+            --text-color: #333333;
+            --accent-color: #555555;
+            --font-main: "Courier New", Courier, monospace;
+        }
+
+        /* --- 2. BODY LAYOUT (MATCHING PREVIOUS STYLE) --- */
+        body {
+            background-color: var(--bg-color);
+            font-family: var(--font-main);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* --- 3. MAIN CARD CONTAINER (MATCHING PREVIOUS STYLE) --- */
+        .blog-card {
+            background-color: var(--card-color);
+            width: 100%;
+            max-width: 900px;
+            border-radius: 12px; 
+            padding: 60px 80px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* --- 4. HEADER SECTION (Simplified, Styled to match user's example) --- */
+        .post-icon {
+            font-size: 24px;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .main-essay-title {
+            /* Applying the styling characteristics from the user's provided 'post-title' example */
+            font-size: 1.2rem; /* Reduced size but still prominent */
+            line-height: 1.4;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 40px;
+            padding-bottom: 0;
+            border-bottom: none; /* Removed dashed line */
+            text-align: left; /* Left-aligned */
+            text-transform: uppercase; /* Uppercase */
+            letter-spacing: 1px; /* Increased letter spacing */
+        }
+
+        /* --- 5. CONTENT SECTION --- */
+        .post-content {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 60px;
+            max-width: 100%; 
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* Styling for the embedded link */
+        .post-content a {
+            color: var(--text-color);
+            text-decoration: underline;
+            font-weight: bold; /* Make links stand out slightly */
+        }
+
+        .post-content a:hover {
+            color: #000;
+        }
+
+
+        /* Custom list style for resources */
+        .resource-list {
+            list-style: none;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .resource-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .resource-list strong {
+            color: var(--text-color);
+        }
+        .resource-list .arrow {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 10px;
+            min-width: 1.5rem;
+        }
+        
+        /* Personal reflection at the end */
+        .personal-statement {
+            border-top: 1px dashed var(--accent-color);
+            padding-top: 20px;
+            margin-top: 40px;
+            font-style: italic;
+        }
+
+        /* --- 6. FOOTER / NAVIGATION --- */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            clear: both;
+        }
+
+        .nav-link {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #000;
+        }
+
+        .back-link {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-3px);
+            color: #000;
+        }
+
+        /* --- 7. RESPONSIVE (MOBILE) --- */
+        @media (max-width: 768px) {
+            .blog-card {
+                padding: 30px 20px;
+            }
+
+            .main-essay-title {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="blog-card">
+        <div class="post-icon">
+            <a href="#" class="back-link" title="Back to Homepage">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                </svg>
+            </a>
+        </div>
+
+        <h1 class="main-essay-title">Breaking the Cycle: Trauma and Mental Health Barriers in the Black Community</h1>
+
+        <article class="post-content">
+            <p>
+                According to the <a href="https://www.nami.org/about-mental-illness/mental-health-by-the-numbers">National Alliance of Mental Illness (NAMI)</a>, one in five people in the U.S. had struggled with a mental illness in 2021, yet only 47.2% received needed treatment, and only 39.4% of Black individuals received care. Due to stigma and discrimination, minorities often go unseen and untreated in mental health. Generational trauma and historical injustices have created a deep-seated mistrust of medical institutions, creating barriers to care that perpetuate cycles of suffering. We need to advocate within the Black community to emphasize that asking for help is okay and that we deserve it, breaking the cycle passed down through generations.
+            </p>
+
+            <p>
+                To understand the cause behind such mental health problems and break this cycle, we must first define generational trauma and historical trauma. Historical trauma refers to the cumulative emotional and psychological pain experienced by a group due to significant events, while generational trauma is the transmission of trauma effects from one generation to the next.
+            </p>
+
+            <p>
+                There have been multiple issues with the black community dealing with slavery and the discrimination/violence that has stemmed from it. Within the black community, systemic racism has made it so there is a general distrust for the medical world, as some of these experiences have been these communities have conditions that have been misdiagnosed and exploited for ‘the advancement of science’ a multitude of times. Specific generational trauma events have significantly impacted trust in the medical and mental health communities. There have been twelve million adults misdiagnosed every year and for women and racial and ethnic minorities, they are 20 to 30% more likely than white men to experience a misdiagnosis. There is a multitude of <a href="https://www.healthline.com/health/racism-mental-health-diagnoses#Mental-health-professionals-don-t-know-how-to-diagnose-Black-people">Black patient experiences</a> stories that I encourage you to delve into about being misdiagnosed. A combination of all of these violations contributes to the hesitation many feel when seeking care, further perpetuating cycles of trauma and mental health struggles. If these communities have gone through much more trauma, why do they not get the help they need?
+            </p>
+
+            <p>
+                The barriers to care exist from disinformation, fear, and lack of effective policy. In minority communities, it is almost a disgrace to ask for mental health help. About 87% of Black people report being a part of a formal religious affiliation. And God seems to be a lot kinder than the medical community has been in the past. And with the criminalization of Black people to such a high degree, as they are 13% of the population, but 33% of the sentenced prison population, Black people are scared that if they speak out and talk to someone, it could be criminalized before being received as a cry for help.
+            </p>
+
+            <p>
+                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10312036/#R1">Suicide rates</a> among Black children aged 5 to 11 are notably higher than those of white children, according to a study published in JAMA. Additionally, while 80.5% of white older adults with depression felt comfortable seeking mental health services, only 56.6% of African American older adults reported the same, reflecting greater internalized stigma and negative attitudes toward mental illness in the Black community. As I searched to find specific stories on Black mental health, I found myself at a loss due to cultural reasons with people not feeling comfortable enough to express it. If there are no stories recorded, how can we recognize where we need to change? Many individuals in these communities lack adequate support for mental health services, often due to insufficient insurance or being underinsured, and cultural differences of not being able to express their needs to family/friends. So who will inform them about accessing care and how to utilize these resources effectively?
+            </p>
+
+            <p>
+                While policy falls short in addressing the needs of marginalized communities, individuals can take charge of their own organizations like:
+            </p>
+
+             <ul class="resource-list">
+                <li>
+                    <span class="arrow">&rarr;</span>
+                    <div>
+                        <a href="https://aakomaproject.org/" class="font-bold">AAKOMA Project:</a> connects people to virtual therapy and has workshops
+                    </div>
+                </li>
+                <li>
+                    <span class="arrow">&rarr;</span>
+                    <div>
+                        <a href="https://cbmnational.org/" class="font-bold">Concerned Black Men of America:</a> has specific chapters per region for more specialized help in those areas
+                    </div>
+                </li>
+                <li>
+                    <span class="arrow">&rarr;</span>
+                    <div>
+                        <a href="https://www.sistaafya.com/" class="font-bold">Sista Afya Community Mental Wellness:</a> connects people to therapists in their area and also holds virtual workshops
+                    </div>
+                </li>
+            </ul>
+
+            <p>
+                ...are actively working to dismantle barriers and promote mental health awareness within communities that need it the most. Take advantage of these resources and remember to put your own mask on before you can help others. As the poem 'First They Came' reminds us, silence in the face of injustice only perpetuates suffering; it’s crucial that we speak out for ourselves and each other, ensuring that every voice is heard and valued.
+            </p>
+
+            <!-- Conclusion / Personal Statement -->
+            <div class="personal-statement">
+                <p>
+                    As a black woman who has dealt with or come into contact with almost everything in this paper; I know that we need to encourage a system of breaking the cycle of trauma and making sure that everyone gets the right treatment. We must unite to dismantle the barriers that prevent individuals in marginalized communities from seeking mental health care.
+                </p>
+            </div>
+        </article>
+
+        <footer class="post-navigation">
+            <a href="#" class="nav-link">Previous Post</a>
+            <a href="#" class="nav-link">Next Post</a>
+        </footer>
+    </main>
+
+</body>
+</html>

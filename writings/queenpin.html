@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queenpin - Blog Layout</title>
+    <style>
+        /* --- 1. RESET & VARIABLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-color: #fdfbf7; /* Swapped: Lighter cream background */
+            --card-color: #eee8d5; /* Swapped: Darker beige card */
+            --text-color: #333333;
+            --accent-color: #555555;
+            --font-main: "Courier New", Courier, monospace;
+        }
+
+        /* --- 2. BODY LAYOUT --- */
+        body {
+            background-color: var(--bg-color);
+            font-family: var(--font-main);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* --- 3. MAIN CARD CONTAINER --- */
+        .blog-card {
+            background-color: var(--card-color);
+            width: 100%;
+            max-width: 900px;
+            border-radius: 12px; 
+            padding: 60px 80px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* --- 4. HEADER SECTION --- */
+        .post-icon {
+            font-size: 24px;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            border-bottom: 1px solid transparent;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+            flex-wrap: wrap;
+            align-items: baseline;
+        }
+
+        .post-date {
+            color: var(--accent-color);
+        }
+
+        .post-title {
+            color: var(--text-color);
+        }
+
+        /* --- 5. CONTENT SECTION --- */
+        .post-content {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 60px;
+            max-width: 90%;
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Special formatting for the story */
+        .story-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        /* New Staircase Effect Styles */
+        .staircase-text p {
+            margin-bottom: 10px;
+        }
+
+        .step-1 { margin-left: 10%; }
+        .step-2 { margin-left: 25%; }
+        .step-3 { margin-left: 40%; }
+        .step-4 { margin-left: 55%; }
+
+        .post-tags {
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        .post-tags a {
+            color: var(--text-color);
+            text-decoration: underline;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .post-tags a:hover {
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* --- 6. FOOTER / NAVIGATION --- */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+        }
+
+        .nav-link {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #000;
+        }
+
+        /* Back Link Styling */
+        .back-link {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-3px); /* Subtle nudge left */
+            color: #000;
+        }
+
+        /* --- 7. RESPONSIVE (MOBILE) --- */
+        @media (max-width: 768px) {
+            .blog-card {
+                padding: 30px 20px;
+            }
+
+            .header-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .post-header {
+                flex-direction: column;
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+            
+            .indented-text {
+                margin-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="blog-card">
+        <!-- Top Icon / Back Link -->
+        <div class="post-icon">
+            <a href="\blog.html" class="back-link" title="Back to Blog">
+                <!-- Simple SVG Icon representing the circle/eye -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Header -->
+        <header class="post-header">
+            <div class="header-meta">
+                <span class="post-date">Nov 24, 2025</span>
+                <span class="post-title">Queenpin</span>
+            </div>
+        </header>
+
+        <!-- Main Body Text -->
+        <article class="post-content">
+            <p>I won't boast and claim that I’m super smart, but I need to express the sheer level of incompetence I’m dealing with daily. I feel like I'm inspiring those around me to reach their potential, albeit in the kindest way possible. But let’s face it, everyone else seems to be stuck in the stupidity pit. I’m hanging atop the school hierarchy, while the rest are scraping the bottom of the barrel. With seemingly no way to pull themselves together.</p>
+            
+            <p>These dimwits have no hope. Mr. Parker, whose always droning on, takes special time to explain the basics, from appositives to conjunctions, aside from me! Well, he ignores me quite a bit, because the team needs it. He goes into such detail with a fine-tooth comb for this mythology unit, but somehow everything still needs to be explained a minimum of three times.</p>
+            
+            <p>With this new batch of students, I reign supreme in this room of mediocrity, which frankly, hurts my soul. I care for them, you know.</p>
+            
+            <p>My upbringing was rough, impoverished even. All I wanted was to rise above, but my family couldn’t support me the way I needed.</p>
+            
+            <p>So, I spun my way out. Years of practice later, I made it to this slightly less terrible classroom. They say practice makes perfect, but somehow, I’m perfect and they just can’t keep up.</p>
+
+            <div class="story-divider">* * *</div>
+
+            <p>After acknowledging that my wisdom is far beyond my peers, I needed to share that wisdom. They can't study as much as I can to refine their skills. Mr. Parker does his best, but hell even he can't perform miracles. My upbringing made it quite clear; I was destined for greatness. I deserved to be treated like a queen, nothing less.</p>
+            
+            <p>Thinking back to those memories, I reminisce back to what my grandfather said to me a while back:</p>
+            
+            <p>“Remember, Margo, people's perceptions become your reality. If you can't meet their expectations, shape their impressions. Make them believe you're invaluable, regardless of the truth. It's not about who you are, but who they think you are. That's the power you hold.”</p>
+            
+            <p>“It doesn’t matter what people think of you-- and your looks. You can’t meet anyone’s expectation of what they want you look like. Use your eyes and look in the mirror to see what they see?”</p>
+            
+            <p>“Grandpa Anansi,” I replied, “It doesn’t matter what they think if I’m great. I don’t care what people think of me.”</p>
+            
+            <p>His response was a smile, “It’s about what you can get from them, Margo. Always play the game. Trick them if you have too.”</p>
+            
+            <p>As the queen I’m destined to be, I don’t work harder than necessary. I should be pampered by these people. Hand and foot as bare minimum.</p>
+
+            <div class="story-divider">* * *</div>
+
+            <p>Staring at me, the hair on my legs unshaved makes me wonder if that’s why I’ve been put in this corner under the AC vent. You know because of my crazy good ability to stay warm, right?</p>
+            
+            <p>Staring at my stomach, my classmates comment on how big my stomach is because the food my classmates want to feed me, alongside with whatever the school has around. Finest of food that they can forage.</p>
+            
+            <p>But they still think I’m cool.</p>
+            
+            <p>And then something happened, my recognition was washed away almost immediately.</p>
+            
+            <p>The entirety of the class ignores me.</p>
+            
+            <p>How could they dismiss someone who is practically gracing their presence, specifically my extraordinary self? Recently, Little Miss Perfect, Gwen, entered our classroom. She thinks she's better. She flaunts her knowledge of multiple mythologies, overshadowing my expertise with a combination of Roman, Norse, and even Egyptian. My classmates treat me differently, acting like I can't help them anymore.</p>
+            
+            <p>Staring at her, the hair on her head cut with a beautiful bob of blonde white hair. Its obvious her grandfather takes her some nice ass barber to get her hair pofessionally done.</p>
+            
+            <p>Staring at her, I see the packed lunch she brings: the PB&J, the lunchables, the caprisun; all essentials in going up the hierarchy; should I have that everyday instead? I wonder, is that making her more appealing?</p>
+            
+            <p>But they still think I’m cool… right?</p>
+
+            <div class="story-divider">* * *</div>
+
+            <p>Gwen outdoes me in everything that’s considered ladylike or cute. She gets a proper desk and is able to cross her legs all refined like, while I'm stuck at a table. She wanders freely, becomes the line leader, and isn’t gawked at like a zoo animal.</p>
+            
+            <p>She downplays my humanity, bombarding me with her superiority. It's absurd how she deliberately excludes me, avoiding any interaction.</p>
+            
+            <p>All I want is to scream, but I must be ladylike, refined, and proper. They'll never respect me otherwise. I am something better. Something greater than her. But Gwen challenges my reign.</p>
+            
+            <p>One day, in a moment of frustration, I tried to reach out to her, to bridge the gap. But she stood there, white-faced as if terrified. She stared while others talked and left the scene; the rest of the classmates followed her. I wanted to scream, to demand my place, but something held me back. It's like I was trapped by the expectations of who I should be.</p>
+            
+            <p>People may regret voting for me, but I deserve to be there as much as she does. I needed to show her I'm still on top through that entirely thick skin of hers.</p>
+            
+            <p>I broke the glass ceiling. It was painful and took so much out of me. I was drained, but hey, I did it. Mr. Parker, for the fiftieth time this week, is droning on and on,</p>
+            
+            <p>“Now in Greek mythology, Athena, often referred to as the goddess of wisdom, strategic warfare, and WHAT THE ACTUAL—WHO LET MARGO OUT?!?"</p>
+            
+            <p>There we go, at least some recognition for getting out.</p>
+            
+            <p>And now the recognition is getting too much.</p>
+
+            <div class="story-divider">* * *</div>
+
+            <p>Glass jars and plastic cups with paper underneath chase me as I advance into the classroom. I scurry with all my might to the other side of the classroom where she sits, needing to be the farthest away she can possibly be from me.</p>
+            
+            <p>I take a deep breath as I arrive at her desk and jump onto her head.</p>
+            
+            <p>She screeches like the animal she is. I laugh as I put some web that blends in with her already practically white, blonde hair. As I’m stuck to her head through my webs, I realize what a mistake I’ve made. The fact that my vengeance led me to this.</p>
+            
+            <p>I take my first leg out of her oily hair, trying to hurt myself in the mess, and then—</p>
+            
+            <!-- Updated Staircase Section -->
+            <div class="staircase-text" style="margin: 30px 0;">
+                <p class="step-1"><i>whoosh</i>, I’m flying,</p>
+                <p class="step-2">Then on a desk,</p>
+                <p class="step-3">Then swatted to rock bottom on the ground,</p>
+                <p class="step-4">shadows creeping over me, flashes being taken (obviously because I am a celebrity).</p>
+            </div>
+            
+            <p>Although it’s embarrassing to even reach that low.</p>
+            
+            <p>My vision blurs further, with the air thickening like smoke and a rancid smell creeping in. I lose all sensation, unable to move, feeling overwhelmed by the crowd encircling me. Everything spins, and I'm in dire need of space. This is too much—just woah—holy shit.</p>
+            
+            <p>Until I hear someone say, “What a disgusting bug.”</p>
+            
+            <p>It hurt, because I’m not a bug; I’m a queen. Please address me as such, even in death <i>please</i>.</p>
+
+            <!-- Tags Section -->
+            <div class="post-tags">
+                <a href="#">fiction</a>
+                <a href="#">queenpin</a>
+                <a href="#">mythology</a>
+            </div>
+        </article>
+
+        <!-- Footer Navigation -->
+        <footer class="post-navigation">
+            <a href="./iron_heart.html" class="nav-link">Previous</a>
+            <a href="./chimera_ant.html" class="nav-link">Next</a>
+        </footer>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esther Aduamah - Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<script>
+  (function () {
+    try {
+      const saved = localStorage.getItem('theme');
+      const systemPrefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      const isDark = saved
+        ? saved === 'dark'
+        : systemPrefersDark;
+
+      if (isDark) {
+        document.documentElement.classList.add('dark-theme');
+      } else {
+        document.documentElement.classList.remove('dark-theme');
+      }
+    } catch (e) {
+      // ignore errors
+    }
+  })();
+</script>
+
+    <header>
+        <div class="logo"><a href="index.html">esther aduamah</a></div>
+        <nav>
+            <a href="experience.html" class="nav-link">projects</a>
+            <a href="about.html" class="nav-link">about</a>
+            <a href="skills.html" class="nav-link">skills</a>
+            <a href="blog.html" class="nav-link">blog</a>
+            <a href="contact.html" class="nav-link">contact</a>
+            <button id="theme-toggle">🌙</button>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <section class="hero-section">
+            <div class="text-container scroll-fade-in">
+                <p>
+                    I'm Esther--
+                    a health equity researcher, biomedical engineer,
+                    data scientist, systems thinker,
+                    and an advocate for accessible care.
+
+                    i'm currently bridging the gap between
+                    data and human stories.
+                </p>
+            </div>
+            
+<div class="image-container">
+    <img 
+        src="images/professionalphoto.png" 
+        alt="Esther Aduamah" 
+        style="max-width: 450px; height: auto; display: block;" 
+    >
+</div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section class="page-section scroll-fade-in">
+            <h2 class="page-title">experience</h2>
+            
+            <div class="list-container">
+                
+                <div class="list-item">
+                    <div class="item-details">
+                        <h3><a href="https://conduitcomputing.com/">Conduit</a></h3>
+                        <span class="sub-header">Intern Biomedical Engineer</span>
+                        <p>Researched, authored, and submitted grant proposals to secure funding for r&d initiatives; aid in wet lab experiments and data collection for research and development.</p>
+                    </div>
+                    <div class="item-meta">
+                        <span>aug 2025 - present</span>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="item-details">
+                        <h3><a href="https://fenwayhealth.org/">Fenway Health</a></h3>
+                        <span class="sub-header">Activist Academy Fellow</span>
+                        <p>Conducting research on the reproductive health team with a focus on systemic inequities; interviewing experts to produce a “pride in our health” podcast episode.</p>
+                    </div>
+                    <div class="item-meta">
+                        <span>jul 2025 - present</span>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="item-details">
+                        <h3> <a href= "https://www.olin.edu/articles/story-oliners-collaborate-local-senior-center-artificial-intelligence-ai-and-augmented">human-centered computing lab</h3>
+                        <a href="https://www.olin.edu/articles/story-oliners-collaborate-local-senior-center-artificial-intelligence-ai-and-augmented" class="sub-header">Research Assistant- Project Manager</a>
+                        <p>Developing a research prototype of a "MyChart-style" patient portal using html and javascript to study navigation challenges faced by elder adults; building multimodal ai interfaces using openai.</p>
+                    </div>
+                    <div class="item-meta">
+                        <span>jan 2025 - present</span>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="item-details">
+                        <h3>Health Equity and Access Lab (HEAL)</h3>
+                        <span class="sub-header">Humanities Divison Co-Creator</span>
+                        <p>Conducted a comprehensive analysis of clinical trial methodologies, identifying gaps in accessibility and proposing targeted solutions to address participant distrust.</p>
+                    </div>
+                    <div class="item-meta">
+                        <span>jul 2024 - dec 2024</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <span class="copyright">Esther Aduamah - © 2025</span>
+        <span class="love-note">built with code, chocolate donuts, & lots of Cartoon Network &lt;3</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

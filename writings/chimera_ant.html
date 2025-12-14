@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Anthill</title>
+    <style>
+        /* --- 1. RESET & VARIABLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-color: #fdfbf7; 
+            --card-color: #eee8d5; 
+            --text-color: #333333;
+            --accent-color: #555555;
+            --font-main: "Courier New", Courier, monospace;
+        }
+
+        /* --- 2. BODY LAYOUT --- */
+        body {
+            background-color: var(--bg-color);
+            font-family: var(--font-main);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* --- 3. MAIN CARD CONTAINER --- */
+        .blog-card {
+            background-color: var(--card-color);
+            width: 100%;
+            max-width: 900px;
+            border-radius: 12px; 
+            padding: 60px 80px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* --- 4. HEADER SECTION --- */
+        .post-icon {
+            font-size: 24px;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid transparent;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+            flex-wrap: wrap;
+            align-items: baseline;
+            width: 100%;
+            justify-content: flex-start; /* Aligned Left as requested */
+        }
+
+        .post-date {
+            color: var(--accent-color);
+        }
+
+        .post-title {
+            color: var(--text-color);
+        }
+
+        /* --- 5. CONTENT SECTION --- */
+        .post-content {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 60px;
+            max-width: 100%; 
+            text-align: left; /* Left aligned for prose/story legibility */
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+        }
+
+        .story-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .post-tags {
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        .post-tags a {
+            color: var(--text-color);
+            text-decoration: underline;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .post-tags a:hover {
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* --- 6. FOOTER / NAVIGATION --- */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+        }
+
+        .nav-link {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #000;
+        }
+
+        .back-link {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-3px);
+            color: #000;
+        }
+
+        /* --- 7. RESPONSIVE (MOBILE) --- */
+        @media (max-width: 768px) {
+            .blog-card {
+                padding: 30px 20px;
+            }
+
+            .header-meta {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+
+            .post-header {
+                flex-direction: column;
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="blog-card">
+        <!-- Top Icon / Back Link -->
+        <div class="post-icon">
+            <a href="blog.html" class="back-link" title="Back to Blog">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Header -->
+        <header class="post-header">
+            <div class="header-meta">
+                <span class="post-date">Nov 24, 2025</span>
+                <span class="post-title">The Anthill</span>
+            </div>
+        </header>
+
+        <!-- Main Body Text -->
+        <article class="post-content">
+            <p>For once in my prepubesecent life, I wished I had put on some deodorant. My sweat is painting some Picasso designs on my underarms. I don’t know who would put children in a smothering hot car on the equator, but somehow, we were sitting in there. Even the ants on the car floor are dying from the heat.</p>
+            
+            <p>“When is Rosemary and Aunt Sister be back?” Junior asks (yes, that’s her real name; life has a way of working that way when you’re the youngest sister, and your parents stopped being creative with names after child five).</p>
+            
+            <p>“I think in an a half hour or so. Rosemary broke some needles so she’s gotta get some new needles.” I replied. Raph nods.</p>
+            
+            <p>As someone who had already seen my brother play his Ninetendo 3DS for about two hundred nine times, I couldn’t be bothered to hear about some hero’s tale. My cousin, who had become engrossed in my brother’s handheld console, produces no sweat at all.</p>
+            
+            <p>I’ve never grown more jealous of someone living in Africa.</p>
+            
+            <p>Being blessed by the window seat was a delight as I could try to look out literally anything else while my sister and my aunt went shopping for sowing supplies.</p>
+            
+            <p>Outside there are a couple of things that aren’t the most interesting to a local, but that’s what has got to be interesting to me. Back in the U.S., I never see this stuff. The adventure, the bustle, the amazing marketplace. Not Market Basket, the grocery store that my mother always complains about the mountain high charge for produce, but the market in the streets of Ghana.</p>
+            
+            <p>I always feel connected to the lady with the big ol’ hat sitting there stirring the broken corn porridge every morning. Or the man who sells old belts and shoes basically thrifted from sweat shops, and then fixes said belts and shoes when they fall apart for a higher price. The countless missionaries who are all sweating in the long button-ups and skinny ties. There’s an immense number of shirts on the floor ranging from Bucci to SNike—the brands are some of the finest that exist. The garlic, cloves, and pepper pinch my nose even through the car. My mouth salivating looking at all of the food: kelewele, waakye, and freshly baked bread. In the vibrant streets of Ghana, rhythms of life echo through bustling markets, where colors dance upon every fabric, weaving tales in the symphony of laughter and song.</p>
+
+            <div class="story-divider">* * *</div>
+
+            <em><p>To interrupt our main plot right now, I want to humor you to imagine an anthill; don’t think of it as if it’s just any anthill, as it's a bustling metropolis in full swing, where the skyscrapers are sand mounds, and the subway system consists of winding tunnels leading to secret chambers of treasure.</p></em>
+            
+            <p>I smile, pressing my fingers against the scorching glass. I tried to imagine what it would be like to push through the glass and engage, converse, and immerse myself in that environment.</p>
+            
+            <p>Yet, here I was, forever watching, as something unexpected unfolded before my eyes.</p>
+            
+            <p>“Wait, what the hell was that?” I wonder. My brother and cousin trapped in Mario’s world that they don’t hear me or my mind.</p>
+            
+            <p>A dark, masked figure emerging from the shadows. It was covered in wet mud, which somehow continued to pile up on it. The figure advanced towards one of the booths, and people around it scrambled, leaping away to escape.</p>
+            
+            <em><p>Now let me ask, have you ever stuck a stick into an anthill. And then when you bring that stick, it’s almost as if they feel you coming, a few disperse, just by the vibrations of your feet.</p></em>
+            
+            <p>An entire family's supply of fruit vanished in an instant, while diapers and toys were next, smeared with mud if they fell out of the monsters, or what I assumed to be, backside.</p>
+            
+            <em><p>The stick enters and the ants exits. A slight poke, and you send tremors through their world, setting off a whirlwind of action. They scurry everywhere: left, right, backwards, even up the stick that you rightfully regret using.</p></em>
+
+            <div class="story-divider">* * *</div>
+
+            <p>I’m vigorously tapping my feet, peeling my fingernails, and biting my lips so hard that they start to bleed; my panic mechanism has been enabled, shit is about to hit the fan.</p>
+            
+            <em><p>When you damage this poor ecosystem, you immediately feel guilt.</p></em>
+            
+            <p>I look back at this monster being and into their eyes. Their eyes have softened, and they appeared disoriented.</p>
+            
+            <em><p>You’ve hurt them in such a way that their home, their way of living, their own adventure is ruined. And yet, they don’t seem that interesting from afar. It’s terrifying because you know that every single one of these ant bites will have you wanting to scratch the inside of your skin for a week. And yet, every single one of those ants' fight for their home.</p></em>
+            
+            <p>Their face looks in every direction, trying to find a way out.</p>
+            
+            <em><p>Their way of living transcends you and whatever agenda you have.</p></em>
+            
+            <p>The being has turned into the scary little kid at the park, playing with things that they shouldn’t. Knowing that an army is coming because they have just declared war.</p>
+            
+            <em><p>Some ants are running for extra resources to rebuild, others finding their first aid kits to help their loved ones, others just waiting out the monster’s (your) attack.</p></em>
+            
+            <p>I focused my mind back in the car. Back in the safety of the metal that surrounds my family to the warm leather seats and soothing radio propaganda of Cape Coast politics. I need to do something; I have too. To make certain that the world knows the monster’s true meaning.</p>
+            
+            <p>Two figures appear in the distance coming towards me. It’s my sister and aunt, shouting at the ignorant people with me in the car. They ignored me, still distracted. With a katana sized sowing needle under her arm, and my aunt having a suspiciously thimble-shaped helmet, they stop and look up at the being.</p>
+            
+            <p>Rosemary smiles in my direction, her grin practically beckoning me to come and join the fight. All the people in the marketplace: grabbing new materials, tending to their young, and caring for their young. I have to help them.</p>
+            
+            <p>I open the door and transform into an ant.</p>
+
+            <!-- Tags Section -->
+            <div class="post-tags">
+                <a href="#">ghana</a>
+                <a href="#">marketplace</a>
+                <a href="#">fiction</a>
+            </div>
+        </article>
+
+        <!-- Footer Navigation -->
+        <footer class="post-navigation">
+            <a href="./queenpin.html" class="nav-link">Previous</a>
+            <a href="#" class="nav-link">Next</a>
+        </footer>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Kim McCall: Unraveling Programmed Cell Death</title>
+    <style>
+        /* --- 1. RESET & VARIABLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-color: #fdfbf7; /* Lighter cream background */
+            --card-color: #eee8d5; /* Darker beige card */
+            --text-color: #333333;
+            --accent-color: #555555;
+            --font-main: "Courier New", Courier, monospace;
+        }
+
+        /* --- 2. BODY LAYOUT --- */
+        body {
+            background-color: var(--bg-color);
+            font-family: var(--font-main);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* --- 3. MAIN CARD CONTAINER --- */
+        .blog-card {
+            background-color: var(--card-color);
+            width: 100%;
+            max-width: 900px;
+            border-radius: 12px; 
+            padding: 60px 80px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* --- 4. HEADER SECTION --- */
+        .post-icon {
+            font-size: 24px;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            border-bottom: 1px solid transparent;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+            flex-wrap: wrap;
+            align-items: baseline;
+        }
+
+        .post-date {
+            color: var(--accent-color);
+        }
+
+        .post-title {
+            color: var(--text-color);
+        }
+        
+        /* --- 5. CONTENT SECTION --- */
+        .post-content {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 60px;
+            /* Changed max-width to allow the content to utilize the floating space */
+            max-width: 100%; 
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+            /* Clear the float after the introduction paragraph */
+            clear: none; 
+        }
+
+        /* Section headings within content - Hidden as requested */
+        .content-heading {
+            display: none;
+        }
+
+        /* Special formatting for the story divider - Hidden as requested */
+        .story-divider {
+            display: none;
+        }
+        
+        .post-tags {
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        .post-tags a {
+            color: var(--text-color);
+            text-decoration: underline;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .post-tags a:hover {
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* General Image Container styles */
+        .image-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* NEW: Class to float the first image left */
+        .float-left-image {
+            float: left;
+            margin: 0 30px 20px 0; /* Top, Right, Bottom, Left margin */
+            max-width: 250px; /* Constrain the image size for floating */
+            text-align: left;
+        }
+
+        .float-left-image img {
+            width: 100%;
+        }
+
+        /* Clear the float after the content block that uses it, to ensure the next major element starts below */
+        .float-clear {
+            clear: both;
+        }
+
+        .image-caption {
+            font-style: italic;
+            margin-top: 10px;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        
+        /* Center the second image container */
+        .center-image-container {
+            clear: both; /* Ensure it doesn't float next to previous content */
+            text-align: center;
+            margin: 30px auto;
+        }
+
+        /* --- 6. FOOTER / NAVIGATION --- */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            clear: both; /* Important to place footer correctly */
+        }
+
+        .nav-link {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #000;
+        }
+
+        /* Back Link Styling */
+        .back-link {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-3px); /* Subtle nudge left */
+            color: #000;
+        }
+
+        /* --- 7. RESPONSIVE (MOBILE) --- */
+        @media (max-width: 768px) {
+            .blog-card {
+                padding: 30px 20px;
+            }
+
+            .header-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .post-header {
+                flex-direction: column;
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+            
+            /* Remove float on smaller screens */
+            .float-left-image {
+                float: none;
+                max-width: 100%;
+                margin: 20px auto;
+                text-align: center;
+            }
+            .image-caption {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="blog-card">
+        <div class="post-icon">
+            <a href="/blog.html" class="back-link" title="Back to Blog">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                </svg>
+            </a>
+        </div>
+
+        <header class="post-header">
+            <div class="header-meta">
+                <span class="post-date">Nov 27, 2025</span>
+                <span class="post-title">Dr. Kim McCall: Unraveling Programmed Cell Death in Drosophila</span>
+            </div>
+        </header>
+
+        <article class="post-content">
+            <div class="image-container float-left-image">
+                <img src="/images/kim_mccall_pfp.jpeg" alt="kim_mccall_pfp">
+                <p class="image-caption">Dr. Kim McCall, Professor of Biology at Boston University.</p>
+            </div>
+            
+            <p>Imagine dedicating 25 years to unraveling the mysteries of developmental biology, and still going strong even when you're not feeling your best. That’s Professor Dr. Kim McCall for you, a biology professor (who used to be the chair of biology!) at Boston University who has spent over two decades advancing our understanding of programmed cell death (PCD) and cell clearance. When I had the chance to talk to her, she was under the weather, but her passion and dedication shone through, reminding us that even the most accomplished scientists are, after all, human.</p>
+
+            <p>Her interest in Drosophila (fruit flies) actually started way back in high school during an AP biology class. That spark stayed with her through college, where she got involved in a Drosophila genetics lab. Later, she joined the Jan lab at UCSF, where she dove deeper into fly genetics and the study of the nervous system. It was there that she realized how powerful Drosophila could be for studying neurobiology, something that’s remained a focus throughout her career.</p>
+
+            <div class="float-clear"></div>
+            
+            <p>In her lab, Professor McCall focuses on the molecular mechanisms of PCD and cell clearance. This means understanding how cells die in a regulated way and how the body clears away those dead cells. Programmed cell death is crucial for maintaining cellular homeostasis and proper development. In Drosophila oogenesis (egg development), PCD regulates energy and egg output, ensuring the survival of the next generation. For example, during the developmental death at the end of oogenesis, 15 nurse cells are eliminated to produce a fully developed oocyte. This process is largely dependent on surrounding follicle cells (FCs) that help clear the dead cells, a process critical for oocyte development and health.</p>
+            
+            <p>One of her key research areas is germline cell death, particularly during oogenesis. Professor McCall’s research found that Drosophila doesn’t follow the typical "apoptosis" pathway usually associated with cell death. Instead, the surrounding follicle cells kill the nurse cells by acidifying the environment around them. This discovery of non-apoptotic cell death was a significant contribution to the understanding of cell death beyond the classical apoptotic pathways. The acidification process in Drosophila is similar to mechanisms seen in mammals as well, providing a deeper insight into how these processes may be manipulated to help human genes. </p>
+            
+            <p>In Drosophila, follicle cells play a pivotal role in the clearance of these dying cells. When the germline undergoes death, the surrounding FCs transition from a quiescent state to an active phagocytic state, allowing them to engulf the dying germline cells through efferocytosis. This transition is crucial to prevent the accumulation of dead cells, ensuring tissue homeostasis and proper egg development. The signaling mechanisms that drive this process involve critical genes and pathways, including the draper gene and JNK signaling, which are essential for the effective clearance of germline cells. Without this clearance, the egg chamber would be impaired, affecting the health of the developing oocyte.</p>
+
+            <p>The draper pathway is one of the key mechanisms in Drosophila germline clearance. Draper acts as an engulfment receptor, recognizing "eat me" signals from the dying germline cells and triggering a signaling cascade in the follicle cells. This pathway activates Rac1, which induces changes in cell morphology and activates the JNK signaling pathway. The activation of JNK leads to the expression of several genes, including draper, enhancing the efficiency of the phagocytic process. If draper expression is inhibited, the engulfment process is reduced, resulting in the accumulation of vesicles containing dead cells, preventing proper clearance. Understanding this pathway provides valuable insights into cell clearance mechanisms in other species, including humans.</p>
+
+            <p>Given that 70% of human genes have similarities in Drosophila, the insights gained from these studies are highly relevant to human biology. Tools like RNA interference (RNAi) and CRISPR/Cas9 allow researchers to turn specific genes on and off and observe how those changes affect development and cell death. The study of these alternative mechanisms in Drosophila provides a fresh perspective on cell clearance—how dead cells are removed—and could lead to breakthroughs in our understanding of how similar processes work in humans, where immune cells like macrophages are typically responsible for cell clearance.</p>
+            
+            <div class="image-container center-image-container">
+                <img src="/images/similaritiesindro.png" alt="similarities_in_Drosophila">
+                <p class="image-caption">Similarities between mammalian and Drosophila ovaries, illustrating conserved developmental processes.</p>
+            </div>
+
+            <p>Dr. McCall’s lab is also exploring single-cell RNA sequencing to study individual cell responses, particularly in mutant fly strains that cannot clear dead cells. This technology allows researchers to uncover how defects in cell death and clearance contribute to diseases like neurodegeneration and immune dysregulation. Single-cell sequencing offers a more detailed understanding of the molecular mechanisms involved in cell death and clearance, revealing cellular processes that might be missed in bulk gene expression analyses.</p>
+
+            <p>Dr. McCall’s research could also inform therapeutic strategies for diseases like Alzheimer’s and Parkinson’s, where defective cell clearance leads to the accumulation of toxic proteins in the brain. By understanding the molecular mechanisms that govern phagocytosis, her work could help develop new strategies for enhancing cell clearance in humans. Furthermore, defective phagocytosis—the inability to engulf dead cells—can lead to the release of inflammatory molecules, which is relevant to understanding autoimmune diseases like lupus or rheumatoid arthritis.</p>
+
+            <p>One of the challenges Dr. McCall faces is live imaging of Drosophila ovarian tissue, which does not tolerate being outside the organism for long periods. Despite this, she remains enthusiastic about the potential of live imaging to provide real-time insights into cellular processes.</p>
+            
+            <p>Dr. McCall’s enthusiasm for Drosophila research is contagious. She is deeply committed to mentoring undergraduate students, and her lab typically hosts five to six students at a time, many of whom stay for several years. Her commitment to education and mentoring further enhances the impact of her work, inspiring students and scientists alike to explore the fascinating world of developmental biology. Her work continues to explore the fundamental biological processes of cell death and clearance, revealing their profound implications for human health.</p>
+
+            <div class="post-tags">
+                <a href="#">developmental_biology</a>
+                <a href="#">Drosophila</a>
+                <a href="#">cell_death</a>
+                <a href="#">neurodegeneration</a>
+                <a href="#">McCall_Lab</a>
+            </div>
+        </article>
+
+        <footer class="post-navigation">
+            <a href="#" class="nav-link">Previous Post</a>
+            <a href="#" class="nav-link">Next Post</a>
+        </footer>
+    </main>
+
+</body>
+</html>

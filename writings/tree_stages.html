@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nature of Competition: Because Not All Trees Are Meant to Share a Stage</title>
+    <style>
+        /* --- 1. RESET & VARIABLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-color: #fdfbf7; /* Lighter cream background */
+            --card-color: #eee8d5; /* Darker beige card */
+            --text-color: #333333;
+            --accent-color: #555555;
+            --font-main: "Courier New", Courier, monospace;
+        }
+
+        /* --- 2. BODY LAYOUT --- */
+        body {
+            background-color: var(--bg-color);
+            font-family: var(--font-main);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* --- 3. MAIN CARD CONTAINER --- */
+        .blog-card {
+            background-color: var(--card-color);
+            width: 100%;
+            max-width: 900px;
+            border-radius: 12px; 
+            padding: 60px 80px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* --- 4. HEADER SECTION --- */
+        .post-icon {
+            font-size: 24px;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            border-bottom: 1px solid transparent;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+            flex-wrap: wrap;
+            align-items: baseline;
+        }
+
+        .post-date {
+            color: var(--accent-color);
+        }
+
+        .post-title {
+            color: var(--text-color);
+        }
+        
+        /* New for the subtitle/source */
+        .post-subtitle {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        /* --- 5. CONTENT SECTION --- */
+        .post-content {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 60px;
+            max-width: 90%;
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Special formatting for the story */
+        .story-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        /* List for Hypotheses */
+        .post-content ul {
+            list-style: none; /* Remove default bullet */
+            padding-left: 0;
+            margin-bottom: 30px;
+        }
+        
+        .post-content li {
+            margin-bottom: 10px;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        .post-content li::before {
+            content: '>'; /* Use a small arrow or character */
+            color: var(--accent-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5em;
+            margin-left: -1.5em;
+        }
+        
+        /* Image container for side-by-side figures */
+        .figure-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            gap: 20px;
+        }
+
+        .figure-item {
+            flex: 1 1 45%; /* Allows items to grow/shrink, minimum 45% width */
+            text-align: center;
+            min-width: 280px; /* Ensure images don't get too small */
+        }
+
+        .figure-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .figure-caption {
+            font-style: italic;
+            margin-top: 10px;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .post-tags {
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        .post-tags a {
+            color: var(--text-color);
+            text-decoration: underline;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .post-tags a:hover {
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* --- 6. FOOTER / NAVIGATION --- */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+        }
+
+        .nav-link {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #000;
+        }
+
+        /* Back Link Styling */
+        .back-link {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-3px); /* Subtle nudge left */
+            color: #000;
+        }
+
+        /* --- 7. RESPONSIVE (MOBILE) --- */
+        @media (max-width: 768px) {
+            .blog-card {
+                padding: 30px 20px;
+            }
+
+            .header-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .post-header {
+                flex-direction: column;
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+            .figure-item {
+                flex: 1 1 100%; /* Stack images on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="blog-card">
+        <div class="post-icon">
+            <a href="/blog.html" class="back-link" title="Back to Blog">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                </svg>
+            </a>
+        </div>
+
+        <header class="post-header">
+            <div class="header-meta">
+                <span class="post-date">Nov 27, 2025</span>
+                <span class="post-title">The Nature of Competition: Because Not All Trees Are Meant to Share a Stage</span>
+            </div>
+
+        </header>
+
+        <article class="post-content">
+            <p>Throughout history, humanity has relentlessly progressed, often at the expense of our environment. The ongoing effects of globalization and harmful agricultural practices have led to ecosystem destruction and the introduction of non-native tree species, which disrupt the delicate balance of biodiversity. However, the efforts of conservationists, like you, offer hope. We have the power to reverse the damage we've caused and support the natural processes that maintain the balance of our ecosystems. By protecting biodiversity, we not only defend nature but also ensure that future generations inherit a thriving, resilient environment.</p>
+            
+            <p>In their study, <span style="font-style: italic;">"Native diversity buffers against the severity of non-native tree invasions,"</span> Delavaux et al. explore several hypotheses that explain how and why invasive species affect native biodiversity:</p>
+
+            <ul>
+                <li>The greater the native diversity, the less likely an invasion.</li>
+                <li>Invasive species thrive when their traits resemble those of native species, especially in extreme environments that are harder for trees to grow, such as those with challenging temperature or lighting conditions.</li>
+                <li>Human activity, particularly in proximity to ports and cities, drastically increases the likelihood of invasions.</li>
+            </ul>
+
+            <p>These hypotheses form a framework for understanding the drivers behind these invasions—and why maintaining native biodiversity is critical in preventing ecological collapse.</p>
+
+            <p>The damage already inflicted on the world’s ecosystems is profound. In areas close to human activity, particularly shipping ports, the introduction of invasive species has been catastrophic. This is evident from the 471,888 forest plots analyzed by over 200 authors in this study. Approximately 23,128 of these plots had been invaded by non-native tree species, with species like <span style="font-style: italic;">Robinia pseudoacacia</span>, or black locust, and <span style="font-style: italic;">Ailanthus altissima</span>, or tree of heaven, being particularly problematic. Out of the 249 non-native tree species, these troublemakers were among the most frequent, occurring across thousands of plots worldwide. These non-native species do more than simply occupy space; they alter entire ecosystems. In tropical regions, which are especially vulnerable, 15.2% of plots were affected, compared to 5.2% in temperate areas. This invasion disrupts plant composition, productivity, and ecosystem services, with economic impacts extending to industries like agriculture and timber production.</p>
+
+            <div class="figure-container">
+                <div class="figure-item">
+                    <img src="/images/figure_1_tree.jpg" alt="Figure 1: Robinia pseudoacacia (Black Locust)">
+                    <p class="figure-caption">Figure 1: Robinia pseudoacacia (Black Locust)</p>
+                </div>
+                <div class="figure-item">
+                    <img src="/images/figure_2_tree.jpg" alt="Figure 2: Ailanthus altissima (Tree of Heaven)">
+                    <p class="figure-caption">Figure 2: Ailanthus altissima (Tree of Heaven)</p>
+                </div>
+            </div>
+            
+
+            <p>Human-driven activities, particularly near shipping ports and urban centers, significantly amplify the invasion problem. Ports act as gateways for the accidental introduction of invasive species, highlighting the strong connection between global trade and biodiversity loss. The closer a plot is to a port, the higher its chance of being invaded by non-native species.</p>
+
+            <p>However, ecosystems with high biodiversity offer a form of natural defense. The study found that native species with greater phylogenetic diversity (evolutionary history and relationship of a species or a group of species) are more resilient to invasions. This means that biodiversity isn't just a luxury—it's a vital barrier that protects ecosystems from invasive species. This scientific principle, known as "biotic resistance," suggests that healthy, diverse ecosystems fill available niches (the role an organism plays in a community), leaving little room for invaders to take root.</p>
+
+            <p>Now that we understand the problem, how can we, as conservationists or activists, make a difference? Supporting biodiversity doesn't require grand gestures; small, thoughtful changes in our daily lives can contribute to ecological health. For instance, using Ecosia—a search engine that uses profits to plant trees—helps restore ecosystems in countries like Haiti, Brazil, and Kenya. Their projects prioritize native species, ensuring that reforestation efforts benefit the local environment. Volunteering with local organizations like the Native Plant Trust to monitor and control invasive species is an impactful way to contribute. Reporting invasive species sightings on platforms like iNaturalist or EDDMapS provides essential data to conservationists. These small actions, when taken collectively, can have a significant impact on preserving biodiversity.</p>
+
+            <p>On a larger scale, we need to advocate for policies that protect biodiversity and restrict the introduction of invasive species. Governments must implement stricter regulations on goods transported through ports, with better monitoring to prevent accidental introductions of non-native species. At the same time, supporting reforestation efforts that prioritize native species will help rebuild ecosystems. This can be done through advocating for sustainable agriculture practices and participating in citizen-led conservation projects.</p>
+
+            <p>The solution to the crisis of non-native tree invasions lies in the protection and restoration of biodiversity. By supporting native ecosystems, we enhance their resilience against future invasions. As individuals and as a society, we must recognize our role in both creating and resolving these environmental issues. The choices we make today—no matter how big or small—will shape the health of our ecosystems for future generations. The science is clear: biodiverse ecosystems are our strongest defense against the damage wrought by invasive species. Humans, who despite historically contributing unknowingly or not, have the power to reverse these trends through targeted biodiversity conservation.</p>
+
+            <div class="post-tags">
+                <a href="#">ecology</a>
+                <a href="#">conservation</a>
+                <a href="#">biodiversity</a>
+                <a href="#">invasive_species</a>
+                <a href="#">trees</a>
+            </div>
+        </article>
+
+        <footer class="post-navigation">
+            <a href="#" class="nav-link">Previous Post</a>
+            <a href="#" class="nav-link">Next Post</a>
+        </footer>
+    </main>
+
+</body>
+</html>

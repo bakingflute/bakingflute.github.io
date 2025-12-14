@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Esther Aduamah</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<script>
+  (function () {
+    try {
+      const saved = localStorage.getItem('theme');
+      const systemPrefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      const isDark = saved
+        ? saved === 'dark'
+        : systemPrefersDark;
+
+      if (isDark) {
+        document.documentElement.classList.add('dark-theme');
+      } else {
+        document.documentElement.classList.remove('dark-theme');
+      }
+    } catch (e) {
+      // ignore errors
+    }
+  })();
+</script>
+
+    <header>
+        <div class="logo"><a href="index.html">esther aduamah</a></div>
+        <nav>
+            <a href="experience.html" class="nav-link">projects</a>
+            <a href="about.html" class="nav-link active">about</a>
+            <a href="skills.html" class="nav-link">skills</a>
+            <a href="blog.html" class="nav-link">blog</a>
+            <a href="contact.html" class="nav-link">contact</a>
+            <button id="theme-toggle">🌙</button>
+        </nav>
+    </header>
+
+
+    <div class="content-wrapper">
+
+        <section id="about" class="page-section">
+            
+            <div class="page-title-block">
+                <h1>About Me!</h1>
+                <span>A Little Bit About Me :)</span>
+            </div>
+            
+            <div class="profile-hero scroll-fade-in">
+                
+                <div class="philosophy-text">
+                    <h2 style="border-bottom: 1px dashed var(--border-color); padding-bottom: 10px; margin-bottom: 20px;">my process & philosophy</h2>
+                    <div class="about-text-content">
+                        <p>i believe in a human-centered approach to development. this means starting every project by deeply understanding the user's needs and pain points, iterating rapidly, and prioritizing accessibility and performance from day one.</p>
+                        <br>
+                        <p>my expertise lies in bridging the gap between data and human stories. continuous learning, clean architecture, and rigorous testing are non-negotiables in my workflow.</p>
+                    </div>
+                </div>
+
+                <div class="professional-photo">
+                    <img src="images/funphoto.jpg" alt="Esther Aduamah">
+                </div>
+            </div>
+
+            <div class="about-section-new">
+                
+                <h2 style="border-bottom: 1px dashed var(--border-color); padding-bottom: 10px; margin-bottom: 50px; margin-top: 60px;">life & hobbies</h2>
+
+                <div class="life-hobby-block photo-left scroll-fade-in">
+                    
+                    <div class="photo-group">
+                        <div class="personal-photo">
+                            <img src="images/hikingone.jpg" alt="Acadia Hiking">
+                        </div>
+                        <div class="personal-photo">
+                            <img src="images/ghana.jpg" alt="In Ghana">
+                        </div>
+                    </div>
+                    
+                    <div class="about-text-content">
+                        <p><strong>Born in Killeen, Texas and raised all over the American South as a military brat</strong>, I love
+                            traveling and have recently picked up hiking! You can usually catch me with have soft spots for used books (the best ones come with annotations & bookmarks), black coffee, and all things green! outside of class, you can usually find me experimenting with tofu, trying out new boba places (i have a rubric), and being dragged on hikes by my friends.</p>
+                    </div>
+
+                </div>
+                
+                <div class="life-hobby-block photo-right scroll-fade-in">
+                    
+                    <div class="about-text-content">
+                        <p><strong>speaking of creative outlets</strong> -- in my free time, i love to paint and draw. i'm always looking for creative outlets that balance the logical structure of software development and research, such as making pointillist portraits or designing digital art.</p>
+                        <br>
+                        <p>my core philosophy centers on creating technology that is both <strong>delightful and ethically conscious</strong>.</p>
+                    </div>
+                    
+                   <div class="photo-group">
+    <div class="personal-photo personal-photo-wide">
+        <img src="images/nsbe.jpg" alt="NSBE">
+    </div>
+    <div class="personal-photo">
+        <img src="images/aquarium.jpg" alt="Hiking view">
+    </div>
+</div>
+
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+    <footer>
+        <span class="copyright">Esther Aduamah - © 2025</span>
+        <span class="love-note">built with code, chocolate donuts, & lots of Cartoon Network &lt;3</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Esther Aduamah</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<script>
+  (function () {
+    try {
+      const saved = localStorage.getItem('theme');
+      const systemPrefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      const isDark = saved
+        ? saved === 'dark'
+        : systemPrefersDark;
+
+      if (isDark) {
+        document.documentElement.classList.add('dark-theme');
+      } else {
+        document.documentElement.classList.remove('dark-theme');
+      }
+    } catch (e) {
+      // ignore errors
+    }
+  })();
+</script>
+
+    <header>
+        <div class="logo"><a href="index.html">esther aduamah</a></div>
+        <nav>
+            <a href="experience.html" class="nav-link">projects</a>
+            <a href="about.html" class="nav-link">about</a>
+            <a href="skills.html" class="nav-link">skills</a>
+            <a href="blog.html" class="nav-link">blog</a>
+            <a href="contact.html" class="nav-link active">contact</a>
+            <button id="theme-toggle">🌙</button>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <section class="page-section scroll-fade-in" style="text-align: center;">
+            <h1 class="page-title" style="border: none;">get in touch</h1>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px auto; color: var(--secondary-text);">
+                i'm always open to discussing research, internship opportunities, or just chatting!
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+                <a href="mailto:estheraduamah1@gmail.com" class="highlight-link" style="font-size: 1.5rem;">estheraduamah1@gmail.com</a>
+                <a href="https://www.linkedin.com/in/esther-aduamah/" class="highlight-link" style="font-size: 1.5rem;">linkedin</a>
+                <a href="https://github.com" class="highlight-link" style="font-size: 1.5rem;">github</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <span class="copyright">Esther Aduamah - © 2025</span>
+        <span class="love-note">built with code, chocolate donuts, & lots of Cartoon Network &lt;3</span>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
