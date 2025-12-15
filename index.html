@@ -5,35 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esther Aduamah - Personal Website</title>
     <link rel="stylesheet" href="styles.css">
-    
-</head>
-<script>
-  (function () {
-    try {
-      const saved = localStorage.getItem('theme');
-      const systemPrefersDark =
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      const isDark = saved
-        ? saved === 'dark'
-        : systemPrefersDark;
-
-      if (isDark) {
-        document.documentElement.classList.add('dark-theme');
-      } else {
-        document.documentElement.classList.remove('dark-theme');
-      }
-    } catch (e) {
-      // ignore errors
-    }
-  })();
-</script>
-
+    </head>
+<body>
     <header>
         <div class="logo"><a href="index.html">esther aduamah</a></div>
         <nav>
-            <a href="experience.html" class="nav-link">projects</a>
+            <a href="experience.html" class="nav-link">experience</a> 
             <a href="about.html" class="nav-link">about</a>
             <a href="skills.html" class="nav-link">skills</a>
             <a href="blog.html" class="nav-link">blog</a>
@@ -51,7 +28,7 @@
                     data scientist, systems thinker,
                     and an advocate for accessible care.
 
-                    i'm currently bridging the gap between
+                    I'm currently bridging the gap between 
                     data and human stories.
                 </p>
             </div>
@@ -65,7 +42,6 @@
 </div>
         </section>
 
-        <!-- EXPERIENCE SECTION -->
         <section class="page-section scroll-fade-in">
             <h2 class="page-title">experience</h2>
             
@@ -95,8 +71,8 @@
 
                 <div class="list-item">
                     <div class="item-details">
-                        <h3> <a href= "https://www.olin.edu/articles/story-oliners-collaborate-local-senior-center-artificial-intelligence-ai-and-augmented">human-centered computing lab</h3>
-                        <a href="https://www.olin.edu/articles/story-oliners-collaborate-local-senior-center-artificial-intelligence-ai-and-augmented" class="sub-header">Research Assistant- Project Manager</a>
+                        <h3> <a href= "https://www.olin.edu/articles/story-oliners-collaborate-local-senior-center-artificial-intelligence-ai-and-augmented">Human-Centered Computing Lab</a></h3>
+                        <span class="sub-header">Research Assistant- Project Manager</span>
                         <p>Developing a research prototype of a "MyChart-style" patient portal using html and javascript to study navigation challenges faced by elder adults; building multimodal ai interfaces using openai.</p>
                     </div>
                     <div class="item-meta">
